@@ -1,0 +1,41 @@
+Home Page Test
+
+Initiate Search
+  Round Trip
+  One Way
+=================
+
+Verify abouve search inputs in Listing page
+
+Select specific airline from airline matrix
+  Pure
+  Mix (with other)
+
+Currency Chaange
+
+Fliters
+ Non Stop
+ 1 Stop
+
+CHeapest Tab
+Cheapest Fare
+=================
+
+Payment Page
+Recently View
+
+Travel Protection
+
+TAC
+
+Support Package
+
+===========================
+
+WebDriverManager.chromedriver().setup();
+
+https://www.cheapoair.com/remotesearch?&from=NYC&to=LAS&fromDt=03/24/2021&toDt=03/30/2021&fromTm=1100&toTm=1100&rt=true&ad=1&se=1&ch=0&infl=0&infs=0&class=1&airpref=&preftyp=1&daan=&raan=&dst=&rst=&IsNS=false
+
+
+https://www.cheapoair.com/remotesearch?&from=LAS&to=LAX&fromDt=03/25/2021&toDt=03/29/2021&fromTm=1100&toTm=1100&rt=true&ad=1&se=0&ch=0&infl=0&infs=0&class=1&airpref=&preftyp=1&daan=&raan=&dst=&rst=&IsNS=false
+
