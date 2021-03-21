@@ -10,9 +10,11 @@
       <class name="org.coa.listingPage.NonStopFilter">
         <methods>
           <include name="openBrowser"/>
+          <include name="beforeSuite"/>
           <include name="quitBrowser"/>
           <include name="beforeClass"/>
           <include name="nonStopFilterTest"/>
+          <include name="afterClass"/>
         </methods>
       </class> <!-- org.coa.listingPage.NonStopFilter -->
     </classes>

@@ -13,10 +13,18 @@ public class SelHelper{
 	
 	//https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm
 	
-	private WebDriver driver;
+	private static WebDriver driver = null;
+	static SelHelper helper;
 	
-	public SelHelper(WebDriver driver) {
-		this.driver = driver;
+	private SelHelper(WebDriver driver) {
+		SelHelper.driver = driver;
+	}
+	
+	public static SelHelper getInstance(WebDriver driver) {
+		if(helper == null) {
+			helper = new SelHelper(driver);
+		}
+		return helper;
 	}
 	
 	public void waitFor(By byLocator, int totalTime, int pollingTime) {

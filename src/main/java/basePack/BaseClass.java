@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import javax.imageio.ImageIO;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -16,19 +18,32 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
 import commonUtilities.SelHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class BaseClass {
 
 	public WebDriver driver;
 	public SelHelper helper;
+	public ExtentHtmlReporter htmlReporter;    //for look and feel of report
+	public ExtentReports extentReport;         //To create entry of test in report
+	public ExtentTest extentTest;              //To update status of test in report
 
 	@BeforeSuite
 	public void beforeSuite() {
@@ -41,29 +56,17 @@ public class BaseClass {
 		String projectPath = System.getProperty("user.dir");
 		System.out.println(projectPath);
 
-		// String browserName = "Firefox";
-
 		if (browserName.equalsIgnoreCase("chrome")) {
-			// CHROME
-			// System.setProperty("webdriver.chrome.driver", projectPath +
-			// "\\browserDrivers\\chromedriver.exe");
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-			
 		}
 
 		else if (browserName.equalsIgnoreCase("firefox")) {
-			// FIREFOX
-			// System.setProperty("webdriver.gecko.driver", projectPath +
-			// "\\browserDrivers\\geckodriver.exe");
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
 
 		else if (browserName.equalsIgnoreCase("ie")) {
-			// IE
-			// System.setProperty("webdriver.ie.driver", projectPath +
-			// "\\browserDrivers\\IEDriverServer.exe");
 			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
 		}
@@ -74,12 +77,7 @@ public class BaseClass {
 			driver = new EdgeDriver();
 		}
 
-		else {
-			// HeadlessBrowser - HtmlUnitDriver
-			// driver = new HtmlUnitDriver();
-		}
-
-		helper = new SelHelper(driver);
+		//helper = SelHelper.getInstance(driver);
 		// 2. Maximize it
 		driver.manage().window().maximize();
 
@@ -91,41 +89,69 @@ public class BaseClass {
 
 	@AfterMethod
 	public void quitBrowser(ITestResult result) throws Exception {
-		// Check status of executed test
-		long testExecutionTime = result.getEndMillis();
-		// System.out.println("testExecutionTime = " + testExecutionTime); //ms
-
-		// System.out.println("getHost = " + result.getHost());
-
-		// System.out.println("result.isSuccess() = " + result.isSuccess());
-
-		// System.out.println("result.getStatus() = " + result.getStatus());
-
-		// System.out.println("result.getMethod().getMethodName() = " +
-		// result.getMethod().getMethodName());
-
-		// ============================================
-		if (!result.isSuccess()) {
-			// Capture Screenshot
-			File scrScreenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-
-			// String fileName = "abc.jpeg";
-			String fileName = result.getMethod().getMethodName() + "_"
-					+ new SimpleDateFormat("dd-MM-yyyy_hh-mm-ss").format(new Date());
-			
-			String filePath = System.getProperty("user.dir") + "\\screenshots\\" + fileName + ".jpeg";
-			File destScreenshot = new File(filePath);
-
-			FileUtils.moveFile(scrScreenshot, destScreenshot);
+		try {
+			if(result.getStatus() == ITestResult.FAILURE) {
+				//FAIL
+				extentTest.log(Status.FAIL, "Test case " + result.getMethod().getMethodName() + " is fail.");
+				
+				currentDateTime = new SimpleDateFormat("yyyyMMdd_hhmmss").format(new Date());
+				
+				String screenshotPath = System.getProperty("user.dir") + "//screenshots//" + result.getMethod().getMethodName() + "_" + currentDateTime + ".jpeg";
+				
+				//Take Screenshot
+				//File srcScreenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+				//File destScreenshot = new File(screenshotPath);
+				
+				Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(500)).takeScreenshot(driver);
+				ImageIO.write(fpScreenshot.getImage(),"JPEG",new File(screenshotPath));
+				
+				
+				//FileUtils.moveFile(srcScreenshot, destScreenshot);
+				
+				extentTest.addScreenCaptureFromPath(screenshotPath);
+				extentTest.info("This test is fail.");
+			}
+			else if(result.getStatus() == ITestResult.SUCCESS) {
+				//PASS
+				
+				extentTest.log(Status.PASS, "This test is pass.");
+			}
+			else if(result.getStatus() == ITestResult.SKIP){
+				extentTest.log(Status.SKIP, "This test is skipped.");	
+			}
 		}
-
-		driver.quit();
+		catch(Exception ex) {
+			extentTest.info("There is some error in test execution '" + result.getMethod().getMethodName() + "' => "+ ex.toString());
+		}
+		finally {
+			driver.quit();
+		}
+	}
+	
+	@AfterClass
+	public void afterClass() {
+		extentReport.flush();
 	}
 
 	static Properties prop;
+	String currentDateTime;
 
 	@BeforeClass
 	public void beforeClass() throws Exception {
+		currentDateTime = new SimpleDateFormat("yyyyMMdd_hhmmss").format(new Date());
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "//extentReport//TestAutomationReport_" + currentDateTime + ".html");
+		htmlReporter.config().setDocumentTitle("Automation Report");
+		htmlReporter.config().setReportName("TechAltum Project");
+		htmlReporter.config().setTheme(Theme.DARK);
+		
+		extentReport = new ExtentReports();
+		extentReport.attachReporter(htmlReporter);
+		extentReport.setSystemInfo("Reporter", "Amit Kumar");
+		extentReport.setSystemInfo("HostName", System.getProperty("user.name"));
+		extentReport.setSystemInfo("OS Name", System.getProperty("os.name"));
+		extentReport.setSystemInfo("Environment", "LIVE");
+		
+		
 		String filePath = System.getProperty("user.dir") + "//testData//data.properties";
 		System.out.println("File path is = " + filePath);
 
@@ -135,6 +161,7 @@ public class BaseClass {
 
 		prop = new Properties();
 		prop.load(fIP);
+		
 	}
 
 	public static String getDataPropFile(String key) {
