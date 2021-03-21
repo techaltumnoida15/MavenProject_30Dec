@@ -29,15 +29,15 @@
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Project_Name">
+            <a href="#" panel-name="suite-Project_Name" class="navigator-link">
               <span class="suite-name border-passed">Project Name</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -48,37 +48,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Project_Name">
-                    <span>H:\Sel_Projects_v8\Maven_Project_30Dec\TestNG.xml</span>
+                  <a href="#" panel-name="test-xml-Project_Name" class="navigator-link ">
+                    <span>D:\New Maven Project-14-03-2021\MavenProject_30Dec\TestNG.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Project_Name">
+                  <a href="#" panel-name="testlist-Project_Name" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Project_Name">
+                  <a href="#" panel-name="group-Project_Name" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Project_Name">
+                  <a href="#" panel-name="times-Project_Name" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Project_Name">
+                  <a href="#" panel-name="reporter-Project_Name" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Project_Name">
+                  <a href="#" panel-name="ignored-methods-Project_Name" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Project_Name">
+                  <a href="#" panel-name="chronological-Project_Name" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -101,8 +101,8 @@
                     </span>
                     <div class="method-list-content passed suite-Project_Name">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Project_Name" title="org.coa.listingPage.NonStopFilter" hash-for-method="nonStopFilterTest">nonStopFilterTest</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Project_Name" title="org.coa.listingPage.NonStopFilter" class="method navigator-link" hash-for-method="nonStopFilterTest">nonStopFilterTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Project_Name -->
@@ -135,18 +135,18 @@
         </div> <!-- panel Project_Name -->
         <div panel-name="test-xml-Project_Name" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">H:\Sel_Projects_v8\Maven_Project_30Dec\TestNG.xml</span>
+            <span class="header-content">D:\New Maven Project-14-03-2021\MavenProject_30Dec\TestNG.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Project Name&quot;&gt;
+&lt;suite name=&quot;Project Name&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;parameter name=&quot;browserName&quot; value=&quot;chrome&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;commonUtilities.RetryListner&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Upload File Using AutoIT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Upload File Using AutoIT&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;org.coa.listingPage.NonStopFilter&quot;/&gt;
     &lt;/classes&gt;
@@ -192,12 +192,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'nonStopFilterTest')
 data.setCell(0, 2, 'org.coa.listingPage.NonStopFilter')
-data.setCell(0, 3, 16547);
+data.setCell(0, 3, 54190);
 window.suiteTableData['Project_Name']= { tableData: data, tableDiv: 'times-div-Project_Name'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 54 seconds</span>
               <div id="times-div-Project_Name">
               </div> <!-- times-div-Project_Name -->
             </div> <!-- times-div -->
@@ -230,19 +230,19 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">22 ms</span>
+                <span class="method-start">45 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">openBrowser(chrome)</span>
-                <span class="method-start">35 ms</span>
+                <span class="method-start">61 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">nonStopFilterTest</span>
-                <span class="method-start">2469 ms</span>
+                <span class="method-start">34602 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">quitBrowser([TestResult name=nonStopFilterTest status=SUCCESS method=NonStopFilter.nonStopFilterTest()[pri:0, in...)</span>
-                <span class="method-start">19018 ms</span>
+                <span class="method-start">88797 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
