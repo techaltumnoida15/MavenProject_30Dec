@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[URL is entered.]]>
     </line>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Project Name" duration-ms="32428" started-at="2021-03-21T14:27:46 IST" finished-at="2021-03-21T14:28:18 IST">
     <groups>
     </groups>
@@ -19,6 +20,22 @@
           </reporter-output>
         </test-method> <!-- beforeClass -->
         <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:org.coa.listingPage.NonStopFilter@d44fc21]" name="openBrowser" is-config="true" duration-ms="2438" started-at="2021-03-21T14:27:46 IST" finished-at="2021-03-21T14:27:48 IST">
+=======
+  <suite started-at="2021-03-20T17:06:34Z" name="Project Name" finished-at="2021-03-20T17:07:32Z" duration-ms="58223">
+    <groups>
+    </groups>
+    <test started-at="2021-03-20T17:06:34Z" name="CurrencyChange" finished-at="2021-03-20T17:07:32Z" duration-ms="58223">
+      <class name="org.coa.listingPage.CurrencyChange">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:org.coa.listingPage.CurrencyChange@7d3e8655]" started-at="2021-03-20T17:06:34Z" name="beforeSuite" finished-at="2021-03-20T17:06:34Z" duration-ms="19" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.coa.listingPage.CurrencyChange@7d3e8655]" started-at="2021-03-20T17:06:34Z" name="beforeClass" finished-at="2021-03-20T17:06:34Z" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="openBrowser(java.lang.String)[pri:0, instance:org.coa.listingPage.CurrencyChange@7d3e8655]" started-at="2021-03-20T17:06:34Z" name="openBrowser" finished-at="2021-03-20T17:06:45Z" duration-ms="11256" status="PASS">
+>>>>>>> 57e37bc9735e4f5c4bde0a161eec8410c1021d1d
           <params>
             <param index="0">
               <value>
@@ -29,6 +46,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
+<<<<<<< HEAD
         <test-method status="FAIL" signature="nonStopFilterTest()[pri:0, instance:org.coa.listingPage.NonStopFilter@d44fc21]" name="nonStopFilterTest" duration-ms="16983" started-at="2021-03-21T14:27:48 IST" finished-at="2021-03-21T14:28:05 IST">
           <exception class="java.lang.AssertionError">
             <message>
@@ -72,28 +90,45 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
+=======
+        <test-method signature="currency()[pri:0, instance:org.coa.listingPage.CurrencyChange@7d3e8655]" started-at="2021-03-20T17:06:45Z" name="currency" finished-at="2021-03-20T17:07:32Z" duration-ms="46894" status="PASS">
+>>>>>>> 57e37bc9735e4f5c4bde0a161eec8410c1021d1d
           <reporter-output>
             <line>
               <![CDATA[URL is entered.]]>
             </line>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- nonStopFilterTest -->
         <test-method status="PASS" signature="quitBrowser(org.testng.ITestResult)[pri:0, instance:org.coa.listingPage.NonStopFilter@d44fc21]" name="quitBrowser" is-config="true" duration-ms="12407" started-at="2021-03-21T14:28:05 IST" finished-at="2021-03-21T14:28:18 IST">
           <params>
             <param index="0">
               <value>
                 <![CDATA[[TestResult name=nonStopFilterTest status=FAILURE method=NonStopFilter.nonStopFilterTest()[pri:0, instance:org.coa.listingPage.NonStopFilter@d44fc21] output=URL is entered.]]]>
+=======
+        </test-method> <!-- currency -->
+        <test-method is-config="true" signature="quitBrowser(org.testng.ITestResult)[pri:0, instance:org.coa.listingPage.CurrencyChange@7d3e8655]" started-at="2021-03-20T17:07:32Z" name="quitBrowser" finished-at="2021-03-20T17:07:32Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=currency status=SUCCESS method=CurrencyChange.currency()[pri:0, instance:org.coa.listingPage.CurrencyChange@7d3e8655] output={null}]]]>
+>>>>>>> 57e37bc9735e4f5c4bde0a161eec8410c1021d1d
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="afterClass()[pri:0, instance:org.coa.listingPage.NonStopFilter@d44fc21]" name="afterClass" is-config="true" duration-ms="475" started-at="2021-03-21T14:28:18 IST" finished-at="2021-03-21T14:28:18 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- org.coa.listingPage.NonStopFilter -->
     </test> <!-- Upload File Using AutoIT -->
+=======
+      </class> <!-- org.coa.listingPage.CurrencyChange -->
+    </test> <!-- CurrencyChange -->
+>>>>>>> 57e37bc9735e4f5c4bde0a161eec8410c1021d1d
   </suite> <!-- Project Name -->
 </testng-results>

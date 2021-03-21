@@ -120,6 +120,7 @@ public class BaseClass {
 				extentTest.log(Status.SKIP, "This test is skipped.");	
 			}
 		}
+<<<<<<< HEAD
 		catch(Exception ex) {
 			extentTest.info("There is some error in test execution '" + result.getMethod().getMethodName() + "' => "+ ex.toString());
 		}
@@ -131,6 +132,10 @@ public class BaseClass {
 	@AfterClass
 	public void afterClass() {
 		extentReport.flush();
+=======
+
+		//driver.quit();
+>>>>>>> 57e37bc9735e4f5c4bde0a161eec8410c1021d1d
 	}
 
 	static Properties prop;
