@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Project Name]" guice-stage="DEVELOPMENT">
+=======
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Project Name]">
+>>>>>>> 10bfd8f023a283d1e38c6d762c57858fd03d4b50
   <parameter name="browserName" value="chrome"/>
   <listeners>
     <listener class-name="commonUtilities.RetryListner"/>
   </listeners>
+<<<<<<< HEAD
   <test thread-count="5" name="Cheapestfair(failed)">
+=======
+  <test thread-count="5" name="CurrencyChange(failed)">
+>>>>>>> 10bfd8f023a283d1e38c6d762c57858fd03d4b50
     <classes>
       <class name="org.coa.listingPage.Cheapest_fair">
         <methods>
           <include name="openBrowser"/>
-          <include name="beforeSuite"/>
           <include name="quitBrowser"/>
           <include name="cheapestfair"/>
           <include name="beforeClass"/>
@@ -18,5 +26,9 @@
         </methods>
       </class> <!-- org.coa.listingPage.Cheapest_fair -->
     </classes>
+<<<<<<< HEAD
   </test> <!-- Cheapestfair(failed) -->
+=======
+  </test> <!-- CurrencyChange(failed) -->
+>>>>>>> 10bfd8f023a283d1e38c6d762c57858fd03d4b50
 </suite> <!-- Failed suite [Project Name] -->

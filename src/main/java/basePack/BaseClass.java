@@ -31,7 +31,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import commonUtilities.SelHelper;
+import commonUtilities.Utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
@@ -40,16 +40,10 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 public class BaseClass {
 
 	public WebDriver driver;
-	public SelHelper helper;
 	public ExtentHtmlReporter htmlReporter;    //for look and feel of report
 	public ExtentReports extentReport;         //To create entry of test in report
 	public ExtentTest extentTest;              //To update status of test in report
 
-	@BeforeSuite
-	public void beforeSuite() {
-		//helper = new SelHelper(driver);
-	}
-	
 	@Parameters({ "browserName" })
 	@BeforeMethod
 	public void openBrowser(String browserName) {
@@ -76,15 +70,12 @@ public class BaseClass {
 			System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\MicrosoftWebDriver.exe");
 			driver = new EdgeDriver();
 		}
-
-		//helper = SelHelper.getInstance(driver);
-		// 2. Maximize it
 		driver.manage().window().maximize();
 
-		// implici wait
+		// implicit wait
 		// driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		// driver.manage().timeouts().setScriptTimeout(2, TimeUnit.MINUTES);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	}
 
 	@AfterMethod
@@ -98,15 +89,8 @@ public class BaseClass {
 				
 				String screenshotPath = System.getProperty("user.dir") + "//screenshots//" + result.getMethod().getMethodName() + "_" + currentDateTime + ".jpeg";
 				
-				//Take Screenshot
-				//File srcScreenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				//File destScreenshot = new File(screenshotPath);
-				
 				Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(500)).takeScreenshot(driver);
 				ImageIO.write(fpScreenshot.getImage(),"JPEG",new File(screenshotPath));
-				
-				
-				//FileUtils.moveFile(srcScreenshot, destScreenshot);
 				
 				extentTest.addScreenCaptureFromPath(screenshotPath);
 				extentTest.info("This test is fail.");
@@ -120,7 +104,10 @@ public class BaseClass {
 				extentTest.log(Status.SKIP, "This test is skipped.");	
 			}
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 10bfd8f023a283d1e38c6d762c57858fd03d4b50
 		catch(Exception ex) {
 			extentTest.info("There is some error in test execution '" + result.getMethod().getMethodName() + "' => "+ ex.toString());
 		}
@@ -132,10 +119,13 @@ public class BaseClass {
 	@AfterClass
 	public void afterClass() {
 		extentReport.flush();
+<<<<<<< HEAD
 
 
 		//driver.quit();
 
+=======
+>>>>>>> 10bfd8f023a283d1e38c6d762c57858fd03d4b50
 	}
 
 	static Properties prop;
