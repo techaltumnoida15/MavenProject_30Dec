@@ -1,4 +1,4 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >=' 
 
 <!-- <suite name="Project Name" parallel="tests" thread-count="2" verbose="1"> -->
 <suite name="Project Name" verbose="1">
@@ -7,21 +7,6 @@
  	<listeners>
 		<listener class-name="commonUtilities.RetryListner" />
 	</listeners>
-
-	<!-- <test name="Upload File Using AutoIT">
-
-		<classes>
-			<class name="org.coa.listingPage.NonStopFilter" />
-		</classes>
-	</test>  -->
-	
-	<!-- <test name="CurrencyChange">
-	
-	<classes>
-			<class name="org.coa.listingPage.CurrencyChange" />
-		</classes>
-	
-	</test> -->
 	
 	<test name="Cheapestfair">
 	
