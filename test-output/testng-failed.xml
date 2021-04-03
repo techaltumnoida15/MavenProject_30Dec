@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Project Name]">
+  <parameter name="browserName" value="chrome"/>
+  <listeners>
+    <listener class-name="commonUtilities.RetryListner"/>
+  </listeners>
+  <test thread-count="5" name="CurrencyChange(failed)">
     <classes>
       <class name="org.coa.listingPage.CurrencyChange">
         <methods>
           <include name="openBrowser"/>
-          <include name="beforeSuite"/>
           <include name="quitBrowser"/>
           <include name="currency"/>
           <include name="beforeClass"/>
-<<<<<<< HEAD
-          <include name="nonStopFilterTest"/>
           <include name="afterClass"/>
-=======
->>>>>>> 57e37bc9735e4f5c4bde0a161eec8410c1021d1d
         </methods>
       </class> <!-- org.coa.listingPage.CurrencyChange -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- CurrencyChange(failed) -->
+</suite> <!-- Failed suite [Project Name] -->

@@ -8,17 +8,17 @@
 		<listener class-name="commonUtilities.RetryListner" />
 	</listeners>
 
-<!-- 	<test name="Upload File Using AutoIT">
+	<test name="CurrencyChange">
 
 		<classes>
-			<class name="org.coa.listingPage.NonStopFilter" />
+			<class name="org.coa.listingPage.CurrencyChange" />
 		</classes>
-	</test>  -->
+	</test> 
 	
-	<test name="CurrencyChange">
+	<test name="Home Page Search">
 	
 	<classes>
-			<class name="org.coa.listingPage.CurrencyChange" />
+			<class name="org.coa.homePage.HomePage_SearchInitiate" />
 		</classes>
 	
 	</test>
