@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Project Name]">
-  <parameter name="browserName" value="chrome"/>
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Project Name]" parallel="tests">
   <listeners>
+    <listener class-name="commonUtilities.Listeners"/>
     <listener class-name="commonUtilities.RetryListner"/>
   </listeners>
-  <test thread-count="5" name="CurrencyChange(failed)">
+  <test thread-count="2" name="CurrencyChange(failed)" parallel="tests">
     <classes>
       <class name="org.coa.listingPage.CurrencyChange">
         <methods>
-          <include name="openBrowser"/>
-          <include name="quitBrowser"/>
+          <include name="initialize"/>
+          <include name="terminate"/>
           <include name="currency"/>
-          <include name="beforeClass"/>
-          <include name="afterClass"/>
         </methods>
       </class> <!-- org.coa.listingPage.CurrencyChange -->
     </classes>
