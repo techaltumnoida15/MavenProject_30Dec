@@ -8,22 +8,22 @@
 		<listener class-name="commonUtilities.RetryListner" />
 	</listeners>
 
-<<<<<<< HEAD
-	<!-- <test name="Upload File Using AutoIT">
-=======
+
+	<!--  <test name="Upload File Using AutoIT">
+
 	<test name="CurrencyChange">
->>>>>>> 10bfd8f023a283d1e38c6d762c57858fd03d4b50
+
 
 		<classes>
 			<class name="org.coa.listingPage.CurrencyChange" />
 		</classes>
-	</test> 
+	</test>  -->
 	
-<<<<<<< HEAD
+
 	<!-- <test name="CurrencyChange">
-=======
+
 	<test name="Home Page Search">
->>>>>>> 10bfd8f023a283d1e38c6d762c57858fd03d4b50
+
 	
 	<classes>
 			<class name="org.coa.homePage.HomePage_SearchInitiate" />

@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.coa.listingPage.CurrencyChange">
+      <class name="org.coa.listingPage.Cheapest_fair">
         <methods>
           <include name="openBrowser"/>
-          <include name="beforeSuite"/>
           <include name="quitBrowser"/>
-          <include name="currency"/>
+          <include name="cheapestfair"/>
           <include name="beforeClass"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- org.coa.listingPage.CurrencyChange -->
+      </class> <!-- org.coa.listingPage.Cheapest_fair -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

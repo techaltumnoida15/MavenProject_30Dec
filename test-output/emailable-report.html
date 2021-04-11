@@ -7,75 +7,32 @@
 </head>
 <body>
 <table>
-<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Project Name</th></tr>
-<<<<<<< HEAD
-<tr><td><a href="#t0">Cheapestfair</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">20,732</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Cheapestfair</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">20,821</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Project Name</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Cheapestfair &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">org.coa.listingPage.Cheapest_fair</td><td><a href="#m0">quitBrowser</a></td><td rowspan="1">1617383846499</td><td rowspan="1">2194</td></tr><tr><th colspan="4">Cheapestfair &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">org.coa.listingPage.Cheapest_fair</td><td><a href="#m1">cheapestfair</a></td><td rowspan="1">1617383830870</td><td rowspan="1">15615</td></tr><tr><th colspan="4">Cheapestfair &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">org.coa.listingPage.Cheapest_fair</td><td><a href="#m2">afterClass</a></td><td rowspan="1">1617383848699</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Project Name</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Cheapestfair &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">org.coa.listingPage.Cheapest_fair</td><td><a href="#m0">quitBrowser</a></td><td rowspan="1">1617727915540</td><td rowspan="1">710</td></tr><tr><th colspan="4">Cheapestfair &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">org.coa.listingPage.Cheapest_fair</td><td><a href="#m1">cheapestfair</a></td><td rowspan="1">1617727899770</td><td rowspan="1">15766</td></tr><tr><th colspan="4">Cheapestfair &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">org.coa.listingPage.Cheapest_fair</td><td><a href="#m2">afterClass</a></td><td rowspan="1">1617727916255</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>Cheapestfair</h2><h3 id="m0">org.coa.listingPage.Cheapest_fair#quitBrowser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=cheapestfair status=FAILURE method=Cheapest_fair.cheapestfair()[pri:0, instance:org.coa.listingPage.Cheapest_fair@565f390] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at basePack.BaseClass.quitBrowser(BaseClass.java:125)
+<h2>Cheapestfair</h2><h3 id="m0">org.coa.listingPage.Cheapest_fair#quitBrowser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=cheapestfair status=FAILURE method=Cheapest_fair.cheapestfair()[pri:0, instance:org.coa.listingPage.Cheapest_fair@41330d4f] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at basePack.BaseClass.quitBrowser(BaseClass.java:112)
 ... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">org.coa.listingPage.Cheapest_fair#cheapestfair</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;//*[@class=&apos;sort-tab__item--price font-weight-bold&apos;]/span[2]&quot;}
+<h3 id="m1">org.coa.listingPage.Cheapest_fair#cheapestfair</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=89.0.4389.114)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-LB7O1B4&apos;, ip: &apos;192.168.0.101&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;9.0.4&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:57640}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 89e4f27131a7ab3746485eeb9d3dd567
-*** Element info: {Using=link text, value=//*[@class=&apos;sort-tab__item--price font-weight-bold&apos;]/span[2]}
-=======
-<tr><td><a href="#t0">CurrencyChange</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">16,852</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Home Page Search</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">10,193</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">1</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">27,045</th><th colspan="2"></th></tr>
-</table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Project Name</th></tr></tbody><tbody id="t0"><tr><th colspan="4">CurrencyChange &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">org.coa.listingPage.CurrencyChange</td><td><a href="#m0">quitBrowser</a></td><td rowspan="1">1617441650318</td><td rowspan="1">1023</td></tr><tr><th colspan="4">CurrencyChange &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">org.coa.listingPage.CurrencyChange</td><td><a href="#m1">currency</a></td><td rowspan="1">1617441638419</td><td rowspan="1">11834</td></tr><tr><th colspan="4">CurrencyChange &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">org.coa.listingPage.CurrencyChange</td><td><a href="#m2">afterClass</a></td><td rowspan="1">1617441651345</td><td rowspan="1">-1617441651345</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Home Page Search &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">org.coa.homePage.HomePage_SearchInitiate</td><td><a href="#m3">quitBrowser</a></td><td rowspan="1">1617441660768</td><td rowspan="1">816</td></tr><tr><th colspan="4">Home Page Search &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">org.coa.homePage.HomePage_SearchInitiate</td><td><a href="#m4">afterClass</a></td><td rowspan="1">1617441661588</td><td rowspan="1">-1617441661588</td></tr><tr><th colspan="4">Home Page Search &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">org.coa.homePage.HomePage_SearchInitiate</td><td><a href="#m5">homePageInitiateSearchTest</a></td><td rowspan="1">1617441653138</td><td rowspan="1">7628</td></tr></tbody>
-</table>
-<h2>CurrencyChange</h2><h3 id="m0">org.coa.listingPage.CurrencyChange#quitBrowser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=currency status=FAILURE method=CurrencyChange.currency()[pri:0, instance:org.coa.listingPage.CurrencyChange@51cdd8a] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at basePack.BaseClass.quitBrowser(BaseClass.java:108)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">org.coa.listingPage.CurrencyChange#currency</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@class=&apos;header-block__item currency-wrap&apos;]/span&quot;}
-  (Session info: chrome=89.0.4389.114)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-MP9K177&apos;, ip: &apos;192.168.1.89&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_181&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\atyag\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53473}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c8f729aa0e8093c809bfd9220fbf76da
-*** Element info: {Using=xpath, value=//*[@class=&apos;header-block__item currency-wrap&apos;]/span}
->>>>>>> 10bfd8f023a283d1e38c6d762c57858fd03d4b50
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56079}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f822a46e899b71b986235678969d3ded
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-<<<<<<< HEAD
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.coa.listingPage.Cheapest_fair.cheapestfair(Cheapest_fair.java:37)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.coa.listingPage.Cheapest_fair.cheapestfair(Cheapest_fair.java:31)
 ... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m2">org.coa.listingPage.Cheapest_fair#afterClass</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-=======
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.coa.listingPage.CurrencyChange.currency(CurrencyChange.java:25)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">org.coa.listingPage.CurrencyChange#afterClass</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Home Page Search</h2><h3 id="m3">org.coa.homePage.HomePage_SearchInitiate#quitBrowser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=homePageInitiateSearchTest status=SUCCESS method=HomePage_SearchInitiate.homePageInitiateSearchTest()[pri:0, instance:org.coa.homePage.HomePage_SearchInitiate@6ee52dcd] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at basePack.BaseClass.quitBrowser(BaseClass.java:108)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">org.coa.homePage.HomePage_SearchInitiate#afterClass</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">org.coa.homePage.HomePage_SearchInitiate#homePageInitiateSearchTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
->>>>>>> 10bfd8f023a283d1e38c6d762c57858fd03d4b50
 </body>
 </html>
