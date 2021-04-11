@@ -1,45 +1,24 @@
 package basePack;
 
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import commonUtilities.Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
-
-public class BaseClass {
+public class BaseClass extends BaseClassBuilder{
 
 	public WebDriver driver;
+<<<<<<< HEAD
 	public ExtentHtmlReporter htmlReporter;    //for look and feel of report
 	public ExtentReports extentReport;         //To create entry of test in report
 	public ExtentTest extentTest;              //To update status of test in report
@@ -126,42 +105,18 @@ public class BaseClass {
 
 
 
+=======
+	
+	@BeforeTest
+	public void initialize() throws Exception {
+		driver = init();
+>>>>>>> 9a5b967d5d765a9697d3daf32baa00c420314d57
 	}
-
-	static Properties prop;
-	String currentDateTime;
-
-	@BeforeClass
-	public void beforeClass() throws Exception {
-		currentDateTime = new SimpleDateFormat("yyyyMMdd_hhmmss").format(new Date());
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "//extentReport//TestAutomationReport_" + currentDateTime + ".html");
-		htmlReporter.config().setDocumentTitle("Automation Report");
-		htmlReporter.config().setReportName("TechAltum Project");
-		htmlReporter.config().setTheme(Theme.DARK);
-		
-		extentReport = new ExtentReports();
-		extentReport.attachReporter(htmlReporter);
-		extentReport.setSystemInfo("Reporter", "Amit Kumar");
-		extentReport.setSystemInfo("HostName", System.getProperty("user.name"));
-		extentReport.setSystemInfo("OS Name", System.getProperty("os.name"));
-		extentReport.setSystemInfo("Environment", "LIVE");
-		
-		
-		String filePath = System.getProperty("user.dir") + "//testData//data.properties";
-		System.out.println("File path is = " + filePath);
-
-		File file = new File(filePath);
-
-		FileInputStream fIP = new FileInputStream(file);
-
-		prop = new Properties();
-		prop.load(fIP);
-		
+	
+	@AfterTest
+	public void terminate() throws Exception {
+		driver.quit();
 	}
-
-	public static String getDataPropFile(String key) {
-
-		return prop.getProperty(key);
-	}
-
+	
+	
 }
